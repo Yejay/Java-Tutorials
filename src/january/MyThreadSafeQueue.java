@@ -32,15 +32,16 @@ public class MyThreadSafeQueue<T> {
 		// T elem = list.get(0);
 		// list.remove(0);
 		synchronized (list) {
-		if (list.size() > 0) {
-			// Hier wird immer das letzte Element gelöscht.
-			
+			if (list.size() > 0) {
+				// Hier wird immer das letzte Element gelöscht.
+
 				T elem = list.get(list.size() - 1);
 				list.remove(list.size() - 1);
 				return elem;
 			} else {
-			return null;
+				return null;
+			}
 		}
-	}
 
+	}
 }
